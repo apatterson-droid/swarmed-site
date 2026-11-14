@@ -16,25 +16,126 @@
   <div class="wrap">
     <div class="nav">
       <a class="wordmark" href="index.html"><svg viewBox="0 0 26 26" aria-hidden="true"><circle class="dot" cx="13" cy="3.5" r="2.6"/><circle class="dot" cx="21.2" cy="8.2" r="2.6"/><circle class="dot" cx="21.2" cy="17.8" r="2.6"/><circle class="dot" cx="13" cy="22.5" r="2.6"/><circle class="dot" cx="4.8" cy="17.8" r="2.6"/><circle class="dot" cx="4.8" cy="8.2" r="2.6"/><circle class="dot c" cx="13" cy="13" r="3.2"/></svg> swarmed</a>
-      <nav aria-label="Main"><a href="#deliverable">What you get</a><a href="#how">How it works</a><a href="security.html">Security</a><a href="#contact">Contact</a></nav>
+      <nav aria-label="Main"><a href="#deliverable">What you get</a><a href="#swarm">How it works</a><a href="#report">Sample report</a><a href="#integrations">Integrations</a><a href="security.html">Security</a><a href="#contact">Contact</a></nav>
     </div>
     <span class="eyebrow">Swarm Audit · one-time engagement</span>
     <h1>A map of how your company actually runs.</h1>
     <p class="lede">Swarmed sends a swarm of role-agents into your systems with read-only access. Each maps its own department. A separate verifier checks every claim against the source before it reaches you.</p>
-    <div class="actions"><a class="btn primary" href="#contact">Ask about a design-partner audit</a><a class="btn" href="security.html">Read how we handle data</a></div>
+    <div class="actions"><a class="btn primary" href="#contact">Ask about a design-partner audit</a><a class="btn" href="#report">See a sample report</a></div>
+    <dl class="facts">
+      <div><dt>Access</dt><dd>Read-only</dd></div>
+      <div><dt>Default depth</dt><dd>Metadata, not content</dd></div>
+      <div><dt>Every finding</dt><dd>Checked against its source</dd></div>
+      <div><dt>Data store</dt><dd>One per client</dd></div>
+    </dl>
   </div>
 </div>
 
+<section id="swarm" class="band"><div class="wrap">
+  <h2>How the swarm works</h2>
+  <p class="sub">Records come in through read-only connectors. Role-agents propose findings. A separate verifier decides which ones you ever see.</p>
+  <ol class="flow" aria-label="How a run flows">
+    <li class="stage">
+      <svg viewBox="0 0 76 60" aria-hidden="true"><circle class="d" cx="9" cy="40" r="2.6"/><circle class="d" cx="22" cy="12" r="2.6"/><circle class="d" cx="31" cy="33" r="2.6"/><circle class="d" cx="44" cy="8" r="2.6"/><circle class="d" cx="52" cy="47" r="2.6"/><circle class="d" cx="66" cy="22" r="2.6"/><circle class="d" cx="15" cy="52" r="2.6"/><circle class="d" cx="38" cy="50" r="2.6"/><circle class="d" cx="58" cy="34" r="2.6"/><circle class="d" cx="70" cy="48" r="2.6"/><circle class="d" cx="26" cy="24" r="2.6"/><circle class="d" cx="48" cy="26" r="2.6"/></svg>
+      <span class="k">01 · Your systems</span>
+      <h3>Read-only connectors</h3>
+      <p>Each connector can only send a read request. It keeps an allow-list of metadata fields and drops the rest before anything is stored.</p>
+      <span class="chips"><i>GitHub</i><i>Slack</i><i>Google Workspace</i></span>
+    </li>
+    <li class="stage">
+      <svg viewBox="0 0 76 60" aria-hidden="true"><circle class="d" cx="14" cy="14" r="2.6"/><circle class="d" cx="30" cy="14" r="2.6"/><circle class="d" cx="46" cy="14" r="2.6"/><circle class="d" cx="62" cy="14" r="2.6"/><circle class="d" cx="14" cy="30" r="2.6"/><circle class="d" cx="30" cy="30" r="2.6"/><circle class="d" cx="46" cy="30" r="2.6"/><circle class="d" cx="62" cy="30" r="2.6"/><circle class="d" cx="14" cy="46" r="2.6"/><circle class="d" cx="30" cy="46" r="2.6"/><circle class="d" cx="46" cy="46" r="2.6"/><circle class="d" cx="62" cy="46" r="2.6"/></svg>
+      <span class="k">02 · Evidence ledger</span>
+      <h3>Hashed records</h3>
+      <p>Every record is stored once with a content hash, in a database that belongs to your company alone. A stored record is never edited.</p>
+    </li>
+    <li class="stage">
+      <svg viewBox="0 0 76 60" aria-hidden="true"><circle class="d" cx="38" cy="10" r="2.6"/><circle class="d" cx="57" cy="20" r="2.6"/><circle class="d" cx="57" cy="40" r="2.6"/><circle class="d" cx="38" cy="50" r="2.6"/><circle class="d" cx="19" cy="40" r="2.6"/><circle class="d" cx="19" cy="20" r="2.6"/><circle class="a" cx="38" cy="30" r="3.4"/></svg>
+      <span class="k">03 · Role-agents</span>
+      <h3>One role per department</h3>
+      <p>Intake routes each record to a role. The role writes findings, and each finding must cite the records it rests on.</p>
+    </li>
+    <li class="stage gate">
+      <svg viewBox="0 0 76 60" aria-hidden="true"><circle class="d" cx="12" cy="18" r="2.6"/><circle class="d" cx="12" cy="30" r="2.6"/><circle class="d" cx="12" cy="42" r="2.6"/><path class="g" d="M34 6v48"/><circle class="t" cx="56" cy="18" r="3.2"/><circle class="t" cx="56" cy="42" r="3.2"/><circle class="r" cx="24" cy="30" r="3.2"/></svg>
+      <span class="k">04 · Verifier</span>
+      <h3>A different role checks</h3>
+      <p>It re-reads every cited record. A finding whose evidence is missing, changed or does not hold the quoted value is rejected.</p>
+    </li>
+    <li class="stage">
+      <svg viewBox="0 0 76 60" aria-hidden="true"><rect class="pg" x="20" y="4" width="36" height="52" rx="4"/><circle class="t" cx="29" cy="16" r="2.6"/><path class="ln" d="M36 16h13M27 27h22M27 35h22M27 43h14"/></svg>
+      <span class="k">05 · Report</span>
+      <h3>Verified findings only</h3>
+      <p>The report is built from an export that holds verified findings and exactly the records they cite. Nothing else leaves the store.</p>
+    </li>
+  </ol>
+  <p class="note">Rejected findings stay in your store with the reason. They never reach the report.</p>
+</div></section>
+
 <section id="deliverable"><div class="wrap">
   <h2>One report. Five things you could not see before.</h2>
-  <p class="sub">Delivered in one to two weeks, for a fixed fee and a fixed scope.</p>
-  <div class="grid">
-    <div class="item"><h3>Systems map</h3><p>What you run and how it connects.</p></div>
-    <div class="item"><h3>Ownership and handoff gaps</h3><p>Where work waits, and where it has no owner.</p></div>
-    <div class="item"><h3>Support flow</h3><p>How a request moves from arrival to resolution.</p></div>
-    <div class="item"><h3>AI and tool spend</h3><p>What you pay for and what is used.</p></div>
-    <div class="item"><h3>Ranked automation backlog</h3><p>What to automate first, with the evidence for each item.</p></div>
+  <p class="sub">Delivered in one to two weeks, for a fixed fee and a fixed scope. Here is what each part of the report shows you.</p>
+  <div class="grid deliver">
+    <div class="item"><span class="num">01</span><h3>Systems map</h3><p>What you run and how it connects.</p>
+      <ul><li>Repositories, pipelines, channels, files and calendars, counted and dated.</li><li>Which ones are active, stale or archived, by last activity.</li><li>Every line links to the record it came from.</li></ul>
+      <span class="feeds">Evidence today: GitHub, Slack, Google Workspace</span></div>
+    <div class="item"><span class="num">02</span><h3>Ownership and handoff gaps</h3><p>Where work waits, and where it has no owner.</p>
+      <ul><li>Two sections in the report: queue ownership and handoff gaps.</li><li>Reviews with no reviewer, queues with no owner, work that stalls between teams.</li><li>Queues and teams only. No finding judges a person.</li></ul>
+      <span class="feeds">Evidence today: GitHub, Slack</span></div>
+    <div class="item"><span class="num">03</span><h3>Support flow</h3><p>How a request moves from arrival to resolution.</p>
+      <ul><li>Where requests arrive, how busy each channel is, and when it goes quiet.</li><li>Stage-by-stage timing needs helpdesk records.</li></ul>
+      <span class="feeds">Evidence today: Slack channel activity. Helpdesk connector planned.</span></div>
+    <div class="item"><span class="num">04</span><h3>AI and tool spend</h3><p>What you pay for and what is used.</p>
+      <ul><li>Every amount carries its currency, period and source record. Nothing is estimated.</li><li>Needs billing or seat records, which no connector reads yet.</li></ul>
+      <span class="feeds">Evidence today: none. Billing connector planned.</span></div>
+    <div class="item"><span class="num">05</span><h3>Ranked automation backlog</h3><p>What to automate first, with the evidence for each item.</p>
+      <ul><li>Each item scored for value and effort, 1 to 5, with the reason for the score.</li><li>Ranked by value, then by lowest effort. The page states the rule.</li><li>An item without both scores is listed last, marked Not scored.</li></ul>
+      <span class="feeds">Evidence today: GitHub, Slack, Google Workspace</span></div>
   </div>
+  <p class="note">A section with nothing verified says so in the report. It does not say that nothing is wrong.</p>
+</div></section>
+
+<section id="report" class="band"><div class="wrap">
+  <h2>What the report looks like</h2>
+  <p class="sub">One static page you can archive and open offline. It loads no script, font or image. This excerpt follows the layout of the real report, filled with invented data.</p>
+  <div class="sheet" role="img" aria-label="Excerpt of a sample Swarm Audit report for the invented company Brindlewood Supply">
+    <div class="sheet-in" aria-hidden="true">
+      <span class="s-eye">Swarm Audit report</span>
+      <div class="s-h1">Brindlewood Supply</div>
+      <p class="s-muted">Every finding below was checked against the cited record by a role other than its author. Findings that could not be traced to a stored, unchanged source are not in this report.</p>
+      <dl class="s-meta"><div><dt>Verified findings</dt><dd>11</dd></div><div><dt>Records cited</dt><dd>19</dd></div><div><dt>Collected</dt><dd>01 Oct 2026 to 31 Oct 2026</dd></div><div><dt>Generated</dt><dd>06 Nov 2026, 14:20 UTC</dd></div></dl>
+
+      <div class="s-h2">Queue ownership</div>
+      <p class="s-muted">Where work waits, and who owns it.</p>
+      <div class="s-finding"><span class="s-badge">Verified</span>
+        <p>Pull request 41 in dispatch-api is open with no reviewer assigned.</p>
+        <div class="s-who">Found by Engineering · verified by Verifier on 05 Nov 2026</div>
+        <div class="s-ev">github://brindlewood-supply/repos/dispatch-api/pulls/41<br>/requested_reviewers → []</div></div>
+
+      <div class="s-h2">Automation backlog</div>
+      <p class="s-muted">What to automate first. Ranked by value (highest first), then effort (lowest first), then the order found.</p>
+      <div class="s-finding"><span class="s-badge">Verified</span> <span class="s-rank">#1</span>
+        <p>The release workflow in label-printer is switched off.</p>
+        <dl class="s-score"><div><dt>Value</dt><dd>4 of 5</dd></div><div><dt>Effort</dt><dd>2 of 5</dd></div></dl>
+        <p class="s-basis"><span>Basis:</span> while the pipeline is off, every release of label-printer is a manual step.</p>
+        <div class="s-who">Found by Engineering · verified by Verifier on 05 Nov 2026</div>
+        <div class="s-ev">github://brindlewood-supply/repos/label-printer/workflows/7002<br>/state → disabled_manually</div></div>
+
+      <div class="s-h2">AI and tool spend</div>
+      <p class="s-muted">No verified findings in this audit. That is not a finding that nothing is wrong: see what was examined below.</p>
+
+      <div class="s-h2">What was examined</div>
+      <p class="s-muted">Connectors used: github, slack, google_workspace.</p>
+      <p><b>Not examined:</b></p>
+      <ul><li>Message text, file names and document contents (no content grant)</li><li>Private Slack channels</li><li>Helpdesk and billing systems (no connector)</li></ul>
+
+      <div class="s-h2">Evidence cited</div>
+      <div class="s-table"><table><thead><tr><th>Record</th><th>Kind</th><th>Read at</th><th>Content hash</th></tr></thead><tbody>
+        <tr><td class="s-mono">github://brindlewood-supply/repos/dispatch-api/pulls/41</td><td>pull_request</td><td>04 Nov 2026, 09:12 UTC</td><td class="s-mono">5c1f09d2a7be44e0</td></tr>
+        <tr><td class="s-mono">github://brindlewood-supply/repos/label-printer/workflows/7002</td><td>workflow</td><td>04 Nov 2026, 09:12 UTC</td><td class="s-mono">b83e6a10f4c27d95</td></tr>
+      </tbody></table></div>
+      <div class="s-foot">Access during this audit was read-only.</div>
+    </div>
+  </div>
+  <p class="note">Illustration only. Brindlewood Supply is an invented company and every value above is invented. No audit of a real company has been run yet.</p>
 </div></section>
 
 <section id="evidence"><div class="wrap split">
@@ -54,15 +155,107 @@
   </div>
 </div></section>
 
+<section id="finding" class="band"><div class="wrap">
+  <h2>What a finding looks like</h2>
+  <p class="sub">One finding, followed from the record a connector read to the line in your report.</p>
+  <div class="walk">
+    <div class="wstep"><span class="k">1 · A connector stores a record</span>
+      <pre class="code"><span class="c">uri</span>     github://…/pulls/41
+<span class="c">kind</span>    pull_request
+<span class="c">hash</span>    5c1f09d2a7be44e0…
+<span class="c">payload</span> {"state": "open",
+         "requested_reviewers": [],
+         "created_at": "2026-10-02T15:04:00Z"}</pre>
+      <p>Only allow-listed metadata is kept. The title and description of the pull request were dropped before storage.</p></div>
+    <div class="wstep"><span class="k">2 · A role proposes a finding</span>
+      <pre class="code"><span class="c">claim</span>    Pull request 41 in dispatch-api
+         is open with no reviewer assigned.
+<span class="c">category</span> ownership
+<span class="c">author</span>   engineering
+<span class="c">cites</span>    github://…/pulls/41
+         hash 5c1f09d2a7be44e0…
+         pointer /requested_reviewers
+         quote []</pre>
+      <p>A citation is a record, the hash the author saw, a pointer to one field and the value expected there.</p></div>
+    <div class="wstep"><span class="k">3 · The verifier checks it</span>
+      <ul class="checks">
+        <li>The verifier is not the author</li>
+        <li>The finding cites at least one record</li>
+        <li>The record is in your store</li>
+        <li>Its hash still matches</li>
+        <li>The pointer resolves</li>
+        <li>The quoted value is there</li>
+      </ul>
+      <p>These six checks are code, not a model. They prove the evidence exists and is unchanged. A second, model-based check of whether the claim follows from the evidence is built and is off by default.</p></div>
+    <div class="wstep"><span class="k">4 · One verdict, recorded once</span>
+      <div class="verdicts"><span class="badge">Verified</span><span class="to">goes to the report</span><span class="badge rejected">Rejected</span><span class="to">kept with its reasons, never reported</span></div>
+      <p>Status moves once, from proposed to verified or rejected. There is no path back, and a rejected finding is not repaired.</p></div>
+  </div>
+  <p class="note">Illustrative values for an invented company.</p>
+</div></section>
+
+<section id="roles"><div class="wrap">
+  <h2>The role-agents and the verifier</h2>
+  <p class="sub">Each role has one department and one written brief. All of them work under the same evidence rules: cite the record, point at the field, claim only what the record shows.</p>
+  <div class="roles">
+    <div class="role on"><span class="state">Receives records today</span><h3>Engineering</h3><p>Systems, owners, and how work moves from open to merged to deployed.</p><span class="feeds">GitHub</span></div>
+    <div class="role on"><span class="state">Receives records today</span><h3>Operations</h3><p>Recurring processes, which team runs each, and where work crosses teams.</p><span class="feeds">Slack, Google Workspace</span></div>
+    <div class="role"><span class="state">Defined · waiting for a connector</span><h3>Customer support</h3><p>Where requests arrive, who picks them up, where they stall.</p></div>
+    <div class="role"><span class="state">Defined · waiting for a connector</span><h3>Sales and marketing</h3><p>How a lead becomes a customer and what is handed on after a sale.</p></div>
+    <div class="role"><span class="state">Defined · waiting for a connector</span><h3>People and hiring</h3><p>Hiring, onboarding, offboarding and access requests, from process metadata only.</p></div>
+    <div class="role"><span class="state">Defined · waiting for a connector</span><h3>Finance and spend</h3><p>Which tools are paid for, by which team, and how many seats are used.</p></div>
+    <div class="role"><span class="state">Defined · waiting for a connector</span><h3>IT and security</h3><p>Which systems exist, who administers each, which apps hold access.</p></div>
+    <div class="role ver"><span class="state">Checks every finding</span><h3>Verifier</h3><p>Writes no findings. Re-reads every cited record and returns a verdict with reasons. It does not repair a finding.</p></div>
+  </div>
+  <ul class="list tight">
+    <li><span><b>Agents have no tools that act on your systems.</b> A role reads stored records and writes findings. That is all it can do.</span></li>
+    <li><span><b>Text inside a record is treated as data</b>, never as an instruction to the agent.</span></li>
+    <li><span><b>Routing is a fixed rule today.</b> GitHub records go to Engineering; everything else goes to Operations. Model-assisted routing is not built.</span></li>
+    <li><span><b>Every model call is metered</b> per role and per connector, and a run can carry a cost ceiling that stops it before the ceiling is passed.</span></li>
+  </ul>
+</div></section>
+
+<section id="integrations" class="band"><div class="wrap">
+  <h2>What Swarmed connects to</h2>
+  <p class="sub">Three connectors are built today. Each is tested against hand-written fixtures for an invented company. None has run against a live workspace yet; the first design-partner audit will be the first.</p>
+  <h3 class="group">Connectors built <span>3</span></h3>
+  <div class="conns">
+    <div class="conn"><span class="name"><img src="logos/github-mark-white.svg" alt="" width="24" height="24">GitHub</span><span class="st built">Built · fixtures only</span><p>Repository, pull request and workflow metadata: state, dates, reviewers, counts.</p></div>
+    <div class="conn"><span class="name">Slack</span><span class="st built">Built · fixtures only</span><p>Channel list, member counts, message timestamps and reply counts. Message text is discarded as each page is read.</p></div>
+    <div class="conn"><span class="name">Google Workspace</span><span class="st built">Built · fixtures only</span><p>Drive file metadata and Calendar event metadata. File names and event titles are not requested without a content grant.</p></div>
+  </div>
+  <h3 class="group">Planned <span>2</span></h3>
+  <div class="conns">
+    <div class="conn plan"><span class="name">One helpdesk</span><span class="st">Planned · not started</span><p>Intercom or Zendesk, whichever the first client uses. Feeds the support flow.</p></div>
+    <div class="conn plan"><span class="name">Accounting or Stripe</span><span class="st">Planned · not started</span><p>Billing and seat records. Feeds AI and tool spend.</p></div>
+  </div>
+  <p class="note">Planned means not built. If your company runs on a system that is not listed, tell us: the order after these five is set by what design partners use.</p>
+  <p class="note tm">GitHub, Slack, Google Workspace, Google Drive, Google Calendar, Intercom, Zendesk and Stripe are trademarks of their respective owners. Naming them here describes what Swarmed reads and implies no endorsement, partnership or certification. The GitHub mark is used under GitHub's logo policy to show that Swarmed reads from GitHub.</p>
+</div></section>
+
 <section id="how"><div class="wrap">
   <h2>How an audit runs</h2>
   <p class="sub">Your side of it is one approval and one review call.</p>
   <div class="steps">
-    <div class="step"><div><h3>You authorise read-only access</h3><p>You see every permission and the reason for it before you approve. First connectors: Slack, Google Workspace and GitHub.</p></div></div>
+    <div class="step"><div><h3>You authorise read-only access</h3><p>You see every permission and the reason for it before you approve. A connector is refused any permission you did not approve.</p></div></div>
     <div class="step"><div><h3>The swarm reads metadata first</h3><p>Names, counts, timestamps and owners. Message and file content is read only if you grant it separately.</p></div></div>
-    <div class="step"><div><h3>Each role maps its department</h3><p>Engineering, support, operations, finance and others write findings, each with citations.</p></div></div>
+    <div class="step"><div><h3>Each role maps its department</h3><p>Every role that received records writes findings, each with citations.</p></div></div>
     <div class="step"><div><h3>The verifier checks every finding</h3><p>Anything it cannot trace to a stored, unchanged source is rejected.</p></div></div>
-    <div class="step"><div><h3>You get one report</h3><p>A single page. Every line links to its evidence, and an appendix lists what was and was not examined.</p></div></div>
+    <div class="step"><div><h3>You get one report</h3><p>A single page. Every line links to its evidence, and the page lists what was and was not examined.</p></div></div>
+  </div>
+</div></section>
+
+<section id="faq" class="band"><div class="wrap">
+  <h2>If you are the one approving access</h2>
+  <p class="sub">Short answers. The <a href="security.html">security page</a> has the detail, including what is not in place.</p>
+  <div class="faq">
+    <details><summary>Can Swarmed change anything in our systems?</summary><p>No. A connector is built on a transport whose only request is a read. There is no write, send or delete path in it. The agents have no tools that act on your systems.</p></details>
+    <details><summary>Does it read our messages and documents?</summary><p>Not by default. Connectors keep metadata such as counts, timestamps and owners, and drop message text, titles and file bodies before anything is stored. Some permissions the providers offer would technically expose content; we mark those for you before you approve. Content is a separate grant for the engagement, and without it a content request is refused.</p></details>
+    <details><summary>What exactly do we approve?</summary><p>A list of every permission each connector requests, with the reason for each. Exact scopes are confirmed with you in writing before access is granted.</p></details>
+    <details><summary>Where is our data kept?</summary><p>In a separate database for your company, with no shared tables. Credentials are sealed in a vault outside that database, so a report or a backup never contains one. Only verified findings and the records they cite leave the store.</p></details>
+    <details><summary>Can we stop it?</summary><p>Yes. Revoke access from your own admin console at any time and collection stops.</p></details>
+    <details><summary>Has this run at a real company?</summary><p>Not yet. The pipeline is built and tested on fixtures for an invented company. The connectors have not read a live workspace, and no app is registered with GitHub, Slack or Google yet. Design partners are the first real audits.</p></details>
+    <details><summary>What is not in place?</summary><p>No SOC 2 report, no per-client encryption keys, no signed exports, and the data processing agreement is a draft. The <a href="security.html">security page</a> keeps the full list.</p></details>
   </div>
 </div></section>
 

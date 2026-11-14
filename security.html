@@ -14,7 +14,7 @@
 <div class="hero"><div class="wrap">
   <div class="nav">
     <a class="wordmark" href="index.html"><svg viewBox="0 0 26 26" aria-hidden="true"><circle class="dot" cx="13" cy="3.5" r="2.6"/><circle class="dot" cx="21.2" cy="8.2" r="2.6"/><circle class="dot" cx="21.2" cy="17.8" r="2.6"/><circle class="dot" cx="13" cy="22.5" r="2.6"/><circle class="dot" cx="4.8" cy="17.8" r="2.6"/><circle class="dot" cx="4.8" cy="8.2" r="2.6"/><circle class="dot c" cx="13" cy="13" r="3.2"/></svg> swarmed</a>
-    <nav aria-label="Main"><a href="index.html#deliverable">What you get</a><a href="index.html#how">How it works</a><a href="security.html" aria-current="page">Security</a><a href="index.html#contact">Contact</a></nav>
+    <nav aria-label="Main"><a href="index.html#deliverable">What you get</a><a href="index.html#swarm">How it works</a><a href="index.html#report">Sample report</a><a href="index.html#integrations">Integrations</a><a href="security.html" aria-current="page">Security</a><a href="index.html#contact">Contact</a></nav>
   </div>
   <span class="eyebrow">Security and data handling</span>
   <h1>What we access, what we keep, what we never do.</h1>
@@ -44,13 +44,13 @@
 
 <section><div class="wrap">
   <h2>What each first connector reads</h2>
-  <p class="sub">Exact scopes are confirmed with you in writing before access is granted. The GitHub connector is built; Slack and Google Workspace are in build.</p>
+  <p class="sub">Exact scopes are confirmed with you in writing before access is granted. All three connectors are built and tested against hand-written fixtures for an invented company. None has run against a live workspace yet.</p>
   <div class="scroll"><table>
     <thead><tr><th>System</th><th>Read by default</th><th>Not read without a separate grant</th></tr></thead>
     <tbody>
       <tr><td>GitHub</td><td>Repository, pull request and workflow metadata: state, dates, reviewers, counts</td><td>Code, titles, descriptions, comments</td></tr>
-      <tr><td>Slack</td><td>Channel list, membership counts, message timestamps and volumes</td><td>Message text, files, direct messages</td></tr>
-      <tr><td>Google Workspace</td><td>Drive file metadata, Calendar event metadata, Gmail headers</td><td>Document contents, email bodies, attachments</td></tr>
+      <tr><td>Slack</td><td>Channel list, member counts, message timestamps, sender ids and reply counts</td><td>Message text, files, direct messages</td></tr>
+      <tr><td>Google Workspace</td><td>Drive file metadata (type, owner domain, modified time, sharing) and Calendar event metadata (times, attendee count, organiser domain)</td><td>File names, event titles, descriptions and locations. Email addresses are never kept, and Gmail is not read at all.</td></tr>
     </tbody>
   </table></div>
 </div></section>
@@ -65,6 +65,7 @@
   </div>
   <div><h2>Not in place yet</h2>
     <ul class="list no">
+      <li><span><b>No live run.</b> No connector has read a real workspace, and no app is registered with GitHub, Slack or Google yet.</span></li>
       <li><span><b>No SOC 2 report.</b> Not started. We will say so until it exists.</span></li>
       <li><span><b>Per-client encryption keys.</b> Today the data volume is encrypted as a whole.</span></li>
       <li><span><b>Signed exports and a fixed retention schedule.</b> Planned with hosting.</span></li>
