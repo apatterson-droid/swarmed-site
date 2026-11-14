@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<title>Swarmed: a map of how your company actually runs</title>
+<meta name="description" content="Swarmed sends read-only role-agents into your systems and returns a map of how your company runs, with every finding tied to evidence.">
+</head>
+<body>
+<div class="hero">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="nav">
+      <a class="wordmark" href="index.html"><svg viewBox="0 0 26 26" aria-hidden="true"><circle class="dot" cx="13" cy="3.5" r="2.6"/><circle class="dot" cx="21.2" cy="8.2" r="2.6"/><circle class="dot" cx="21.2" cy="17.8" r="2.6"/><circle class="dot" cx="13" cy="22.5" r="2.6"/><circle class="dot" cx="4.8" cy="17.8" r="2.6"/><circle class="dot" cx="4.8" cy="8.2" r="2.6"/><circle class="dot c" cx="13" cy="13" r="3.2"/></svg> swarmed</a>
+      <nav aria-label="Main"><a href="#deliverable">What you get</a><a href="#how">How it works</a><a href="security.html">Security</a><a href="#contact">Contact</a></nav>
+    </div>
+    <span class="eyebrow">Swarm Audit · one-time engagement</span>
+    <h1>A map of how your company actually runs.</h1>
+    <p class="lede">Swarmed sends a swarm of role-agents into your systems with read-only access. Each maps its own department. A separate verifier checks every claim against the source before it reaches you.</p>
+    <div class="actions"><a class="btn primary" href="#contact">Ask about a design-partner audit</a><a class="btn" href="security.html">Read how we handle data</a></div>
+  </div>
+</div>
+
+<section id="deliverable"><div class="wrap">
+  <h2>One report. Five things you could not see before.</h2>
+  <p class="sub">Delivered in one to two weeks, for a fixed fee and a fixed scope.</p>
+  <div class="grid">
+    <div class="item"><h3>Systems map</h3><p>What you run and how it connects.</p></div>
+    <div class="item"><h3>Ownership and handoff gaps</h3><p>Where work waits, and where it has no owner.</p></div>
+    <div class="item"><h3>Support flow</h3><p>How a request moves from arrival to resolution.</p></div>
+    <div class="item"><h3>AI and tool spend</h3><p>What you pay for and what is used.</p></div>
+    <div class="item"><h3>Ranked automation backlog</h3><p>What to automate first, with the evidence for each item.</p></div>
+  </div>
+</div></section>
+
+<section id="evidence"><div class="wrap split">
+  <div>
+    <h2>Every line has a source you can open.</h2>
+    <p class="sub">A finding names the record it rests on and the exact field. The verifier re-reads that record. If the evidence is missing, changed or does not say what the finding claims, the finding is rejected and never reaches your report.</p>
+    <ul class="list">
+      <li><span><b>We found</b>, never <b>we believe</b>. Anything unverified is labelled unverified or left out.</span></li>
+      <li><span>The role that writes a finding cannot verify it.</span></li>
+      <li><span>It reports queues, teams and handoffs. It does not judge individuals.</span></li>
+    </ul>
+  </div>
+  <div style="display:grid;gap:12px">
+    <div class="finding"><span class="badge">Verified</span><p>Pull request 41 in dispatch-api has been open with no reviewer assigned.</p><div class="src">github://brindlewood-supply/repos/dispatch-api/pulls/41<br>/requested_reviewers → []</div></div>
+    <div class="finding"><span class="badge rejected">Rejected</span><p>The dispatch team ignores review requests.</p><div class="src">cites no evidence · judges people, not a queue</div></div>
+    <p class="note">Illustrative examples from our test data for an invented company.</p>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>How an audit runs</h2>
+  <p class="sub">Your side of it is one approval and one review call.</p>
+  <div class="steps">
+    <div class="step"><div><h3>You authorise read-only access</h3><p>You see every permission and the reason for it before you approve. First connectors: Slack, Google Workspace and GitHub.</p></div></div>
+    <div class="step"><div><h3>The swarm reads metadata first</h3><p>Names, counts, timestamps and owners. Message and file content is read only if you grant it separately.</p></div></div>
+    <div class="step"><div><h3>Each role maps its department</h3><p>Engineering, support, operations, finance and others write findings, each with citations.</p></div></div>
+    <div class="step"><div><h3>The verifier checks every finding</h3><p>Anything it cannot trace to a stored, unchanged source is rejected.</p></div></div>
+    <div class="step"><div><h3>You get one report</h3><p>A single page. Every line links to its evidence, and an appendix lists what was and was not examined.</p></div></div>
+  </div>
+</div></section>
+
+<section id="tiers"><div class="wrap">
+  <h2>Where this is going</h2>
+  <p class="sub">We are building in order. Only the first is on offer.</p>
+  <div class="grid tiers">
+    <div class="item now"><span class="state">In build · design partners</span><h3>Swarm Audit</h3><p>One-time discovery, delivered as a map and findings report.</p></div>
+    <div class="item"><span class="state">Planned</span><h3>Swarmed Live</h3><p>A subscription that keeps the map current, with a daily summary.</p></div>
+    <div class="item"><span class="state">Later</span><h3>Deployed workforce</h3><p>Agents that carry out approved tasks, not only observe. Not designed yet.</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact">
+    <h2>Run one of the first audits with us</h2>
+    <p class="sub" style="margin:0">We are looking for a small number of design-partner companies. You get the report; we learn what makes it worth paying for.</p>
+    <!-- CONTACT: replace this line with the real address before launch. See site/README.md. -->
+    <p class="addr" data-contact>Contact address to be added before launch</p>
+  </div>
+</div></section>
+<footer class="wrap"><span>swarmed · many small agents, one clear picture</span><span><a href="index.html">Home</a> · <a href="security.html">Security and data handling</a></span></footer>
+<script src="field.js"></script>
+</body>
+</html>

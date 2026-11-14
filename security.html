@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+<title>Security and data handling · Swarmed</title>
+<meta name="description" content="What Swarmed accesses, what it keeps, what it never does, and what is not in place yet.">
+</head>
+<body>
+<div class="hero"><div class="wrap">
+  <div class="nav">
+    <a class="wordmark" href="index.html"><svg viewBox="0 0 26 26" aria-hidden="true"><circle class="dot" cx="13" cy="3.5" r="2.6"/><circle class="dot" cx="21.2" cy="8.2" r="2.6"/><circle class="dot" cx="21.2" cy="17.8" r="2.6"/><circle class="dot" cx="13" cy="22.5" r="2.6"/><circle class="dot" cx="4.8" cy="17.8" r="2.6"/><circle class="dot" cx="4.8" cy="8.2" r="2.6"/><circle class="dot c" cx="13" cy="13" r="3.2"/></svg> swarmed</a>
+    <nav aria-label="Main"><a href="index.html#deliverable">What you get</a><a href="index.html#how">How it works</a><a href="security.html" aria-current="page">Security</a><a href="index.html#contact">Contact</a></nav>
+  </div>
+  <span class="eyebrow">Security and data handling</span>
+  <h1>What we access, what we keep, what we never do.</h1>
+  <p class="lede">For the person who has to approve access. This describes how the Swarm Audit is built today, including what is not finished.</p>
+</div></div>
+
+<section><div class="wrap split">
+  <div><h2>Access</h2>
+    <ul class="list">
+      <li><span><b>Read-only by construction.</b> Connectors are built on a transport that can only read. There is no write, send or delete path to misuse.</span></li>
+      <li><span><b>Least scope, shown to you.</b> Each connector lists every permission it requests and why. That list is what you approve.</span></li>
+      <li><span><b>Metadata first.</b> Each connector keeps an allow-list of fields and drops the rest, including titles, message text and file bodies, before anything is stored.</span></li>
+      <li><span><b>Content is a separate grant.</b> Without your explicit approval for the engagement, a content request is refused.</span></li>
+      <li><span><b>You can revoke at any time</b> from your own admin console. Collection stops.</span></li>
+    </ul>
+  </div>
+  <div><h2>Storage and isolation</h2>
+    <ul class="list">
+      <li><span><b>One isolated store per client.</b> A separate database per company, with no shared tables.</span></li>
+      <li><span><b>Evidence is hashed.</b> A finding whose evidence has changed since it was stored is rejected.</span></li>
+      <li><span><b>Only verified findings leave the store</b>, with exactly the records they cite. Exports are bound to your company and rejected anywhere else.</span></li>
+      <li><span><b>Credentials are never stored with evidence.</b></span></li>
+      <li><span><b>Deletion</b> on request and at the end of the engagement.</span></li>
+    </ul>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>What each first connector reads</h2>
+  <p class="sub">Exact scopes are confirmed with you in writing before access is granted. The GitHub connector is built; Slack and Google Workspace are in build.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>System</th><th>Read by default</th><th>Not read without a separate grant</th></tr></thead>
+    <tbody>
+      <tr><td>GitHub</td><td>Repository, pull request and workflow metadata: state, dates, reviewers, counts</td><td>Code, titles, descriptions, comments</td></tr>
+      <tr><td>Slack</td><td>Channel list, membership counts, message timestamps and volumes</td><td>Message text, files, direct messages</td></tr>
+      <tr><td>Google Workspace</td><td>Drive file metadata, Calendar event metadata, Gmail headers</td><td>Document contents, email bodies, attachments</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section><div class="wrap split">
+  <div><h2>Models</h2>
+    <ul class="list">
+      <li><span>Model calls run through one audited module on commercial API terms, never personal accounts.</span></li>
+      <li><span>We do not train models on your data.</span></li>
+      <li><span>Agents have no tools that act on your systems. They read evidence and write findings.</span></li>
+    </ul>
+  </div>
+  <div><h2>Not in place yet</h2>
+    <ul class="list no">
+      <li><span><b>No SOC 2 report.</b> Not started. We will say so until it exists.</span></li>
+      <li><span><b>Per-client encryption keys.</b> Today the data volume is encrypted as a whole.</span></li>
+      <li><span><b>Signed exports and a fixed retention schedule.</b> Planned with hosting.</span></li>
+      <li><span><b>Data processing agreement.</b> A draft will be provided before any access is granted.</span></li>
+    </ul>
+  </div>
+</div></section>
+<footer class="wrap"><span>swarmed · many small agents, one clear picture</span><span><a href="index.html">Home</a> · <a href="security.html">Security and data handling</a></span></footer>
+</body>
+</html>
