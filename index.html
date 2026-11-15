@@ -96,10 +96,10 @@
       <span class="feeds">Evidence today: GitHub, Slack</span></div>
     <div class="item"><span class="num">03</span><h3>Support flow</h3><p>How a request moves from arrival to resolution.</p>
       <ul><li>Where requests arrive, how busy each channel is, and when it goes quiet.</li><li>Stage-by-stage timing needs helpdesk records.</li></ul>
-      <span class="feeds">Evidence today: Slack channel activity. Helpdesk connector planned.</span></div>
+      <span class="feeds">Evidence today: Slack channel activity. Zendesk and Intercom connectors are built, not yet routed to this view.</span></div>
     <div class="item"><span class="num">04</span><h3>AI and tool spend</h3><p>What you pay for and what is used.</p>
-      <ul><li>Every amount carries its currency, period and source record. Nothing is estimated.</li><li>Needs billing or seat records, which no connector reads yet.</li></ul>
-      <span class="feeds">Evidence today: none. Billing connector planned.</span></div>
+      <ul><li>Every amount carries its currency, period and source record. Nothing is estimated.</li><li>Needs billing or seat records. The Stripe and QuickBooks connectors read them, and neither has run live.</li></ul>
+      <span class="feeds">Evidence today: none. Stripe and QuickBooks connectors are built, not yet routed to this view.</span></div>
     <div class="item"><span class="num">05</span><h3>Ranked automation backlog</h3><p>What to automate first, with the evidence for each item.</p>
       <ul><li>Each item scored for value and effort, 1 to 5, with the reason for the score.</li><li>Ranked by value, then by lowest effort. The page states the rule.</li><li>An item without both scores is listed last, marked Not scored.</li></ul>
       <span class="feeds">Evidence today: GitHub, Slack, Google Workspace</span></div>
@@ -139,7 +139,7 @@
       <div class="s-h2">What was examined</div>
       <p class="s-muted">Connectors used: github, slack, google_workspace.</p>
       <p><b>Not examined:</b></p>
-      <ul><li>Message text, file names and document contents (no content grant)</li><li>Private Slack channels</li><li>Helpdesk and billing systems (no connector)</li></ul>
+      <ul><li>Message text, file names and document contents (no content grant)</li><li>Private Slack channels</li><li>Helpdesk and billing systems (not connected in this run)</li></ul>
 
       <div class="s-h2">Evidence cited</div>
       <div class="s-table"><table><thead><tr><th>Record</th><th>Kind</th><th>Read at</th><th>Content hash</th></tr></thead><tbody>
@@ -231,20 +231,30 @@
 
 <section id="integrations" class="band"><div class="wrap">
   <h2>What Swarmed connects to</h2>
-  <p class="sub">Three connectors are built today. Each is tested against hand-written fixtures for an invented company. None has run against a live workspace yet; the first design-partner audit will be the first.</p>
-  <h3 class="group">Connectors built <span>3</span></h3>
+  <p class="sub">Twelve connectors are built today. Each is tested against hand-written fixtures for an invented company. None has run against a live workspace yet; the first design-partner audit will be the first.</p>
+  <h3 class="group">Connectors built <span>12</span></h3>
   <div class="conns">
     <div class="conn"><span class="name"><img src="logos/github.svg" alt="GitHub" height="36"></span><span class="st built">Built · fixtures only</span><p>Repository, pull request and workflow metadata: state, dates, reviewers, counts.</p></div>
     <div class="conn"><span class="name">Slack</span><span class="st built">Built · fixtures only</span><p>Channel list, member counts, message timestamps and reply counts. Message text is discarded as each page is read.</p></div>
     <div class="conn"><span class="name">Google Workspace</span><span class="st built">Built · fixtures only</span><p>Drive file metadata and Calendar event metadata. File names and event titles are not requested without a content grant.</p></div>
+    <div class="conn"><span class="name">Microsoft 365</span><span class="st built">Built · fixtures only</span><p>Users, groups, mailbox folder counts, OneDrive file metadata and calendar event metadata. Subjects and file names need a content grant.</p></div>
+    <div class="conn"><span class="name">Jira</span><span class="st built">Built · fixtures only</span><p>Projects and issue metadata: status, type, assignee, created and resolved dates. Issue summaries need a content grant.</p></div>
+    <div class="conn"><span class="name">Asana</span><span class="st built">Built · fixtures only</span><p>Workspaces, teams, projects and task metadata: state, assignee, dates. Task and project names need a content grant.</p></div>
+    <div class="conn"><span class="name">Zendesk</span><span class="st built">Built · fixtures only</span><p>Ticket metadata: status, assignee, group, timestamps and ticket metrics. Users are counted, never listed.</p></div>
+    <div class="conn"><span class="name">Intercom</span><span class="st built">Built · fixtures only</span><p>Conversation metadata: state, assignee, team and response timestamps. Message text is never requested.</p></div>
+    <div class="conn"><span class="name">HubSpot</span><span class="st built">Built · fixtures only</span><p>Owners, pipelines and deal metadata: stage, owner, dates. Contacts and companies are counted, never listed.</p></div>
+    <div class="conn"><span class="name">Salesforce</span><span class="st built">Built · fixtures only</span><p>Users, opportunity and case metadata: stage, status, owner, dates. Accounts, contacts and leads are counted only.</p></div>
+    <div class="conn"><span class="name">Stripe</span><span class="st built">Built · fixtures only</span><p>Products, prices, subscriptions and invoices. Customers are counted, never listed. No card or bank details are kept.</p></div>
+    <div class="conn"><span class="name">QuickBooks</span><span class="st built">Built · fixtures only</span><p>Vendors, bills and purchases on expense accounts, totalled per vendor. Bank and card accounts are skipped.</p></div>
   </div>
-  <h3 class="group">Planned <span>2</span></h3>
+  <h3 class="group">Planned <span>3</span></h3>
   <div class="conns">
-    <div class="conn plan"><span class="name">One helpdesk</span><span class="st">Planned · not started</span><p>Intercom or Zendesk, whichever the first client uses. Feeds the support flow.</p></div>
-    <div class="conn plan"><span class="name">Accounting or Stripe</span><span class="st">Planned · not started</span><p>Billing and seat records. Feeds AI and tool spend.</p></div>
+    <div class="conn plan"><span class="name">Linear</span><span class="st">Planned · not started</span><p>Needs a query-only request type that the read-only transport does not send yet.</p></div>
+    <div class="conn plan"><span class="name">Notion</span><span class="st">Planned · not started</span><p>Needs a version header and a search request that the transport does not send yet.</p></div>
+    <div class="conn plan"><span class="name">Xero</span><span class="st">Planned · not started</span><p>Needs an organisation header that the transport does not send yet.</p></div>
   </div>
-  <p class="note">Planned means not built. If your company runs on a system that is not listed, tell us: the order after these five is set by what design partners use.</p>
-  <p class="note tm">GitHub, Slack, Google Workspace, Google Drive, Google Calendar, Intercom, Zendesk and Stripe are trademarks of their respective owners. Naming them here describes what Swarmed reads and implies no endorsement, partnership or certification. The GitHub mark is used under GitHub's logo policy to show that Swarmed reads from GitHub.</p>
+  <p class="note">Planned means not built. Built means the connector exists and passes its tests on fixtures; it does not mean an app is registered with that provider. Salesforce and QuickBooks offer no read-only permission, so for those two read-only is enforced by Swarmed's transport, which can only send read requests.</p>
+  <p class="note tm">GitHub, Slack, Google Workspace, Microsoft 365, Jira, Asana, Zendesk, Intercom, HubSpot, Salesforce, Stripe, QuickBooks, Linear, Notion and Xero are trademarks of their respective owners. Naming them here describes what Swarmed reads and implies no endorsement, partnership or certification. The GitHub mark is used under GitHub's logo policy to show that Swarmed reads from GitHub.</p>
 </div></section>
 
 <section id="how"><div class="wrap">
