@@ -231,8 +231,8 @@
 
 <section id="integrations" class="band"><div class="wrap">
   <h2>What Swarmed connects to</h2>
-  <p class="sub">Twelve connectors are built today. Each is tested against hand-written fixtures for an invented company. None has run against a live workspace yet; the first design-partner audit will be the first.</p>
-  <h3 class="group">Connectors built <span>12</span></h3>
+  <p class="sub">Fifteen connectors are built today. Each is tested against hand-written fixtures for an invented company. None has run against a live workspace yet; the first design-partner audit will be the first.</p>
+  <h3 class="group">Connectors built <span>15</span></h3>
   <div class="conns">
     <div class="conn"><span class="name"><img src="logos/github.svg" alt="GitHub" height="36"></span><span class="st built">Built · fixtures only</span><p>Repository, pull request and workflow metadata: state, dates, reviewers, counts.</p></div>
     <div class="conn"><span class="name">Slack</span><span class="st built">Built · fixtures only</span><p>Channel list, member counts, message timestamps and reply counts. Message text is discarded as each page is read.</p></div>
@@ -246,14 +246,11 @@
     <div class="conn"><span class="name">Salesforce</span><span class="st built">Built · fixtures only</span><p>Users, opportunity and case metadata: stage, status, owner, dates. Accounts, contacts and leads are counted only.</p></div>
     <div class="conn"><span class="name">Stripe</span><span class="st built">Built · fixtures only</span><p>Products, prices, subscriptions and invoices. Customers are counted, never listed. No card or bank details are kept.</p></div>
     <div class="conn"><span class="name">QuickBooks</span><span class="st built">Built · fixtures only</span><p>Vendors, bills and purchases on expense accounts, totalled per vendor. Bank and card accounts are skipped.</p></div>
+    <div class="conn"><span class="name">Linear</span><span class="st built">Built · fixtures only</span><p>Teams, projects and issue metadata: state, assignee, dates, cycle. Read through a query-only request; changes are refused before anything is sent.</p></div>
+    <div class="conn"><span class="name">Notion</span><span class="st built">Built · fixtures only</span><p>Users, pages and databases: ids, parents, created and edited times. Titles are discarded as each page is read unless you grant content.</p></div>
+    <div class="conn"><span class="name">Xero</span><span class="st built">Built · fixtures only</span><p>Suppliers, bills and expense accounts, totalled per supplier. No bank details are kept.</p></div>
   </div>
-  <h3 class="group">Planned <span>3</span></h3>
-  <div class="conns">
-    <div class="conn plan"><span class="name">Linear</span><span class="st">Planned · not started</span><p>Needs a query-only request type that the read-only transport does not send yet.</p></div>
-    <div class="conn plan"><span class="name">Notion</span><span class="st">Planned · not started</span><p>Needs a version header and a search request that the transport does not send yet.</p></div>
-    <div class="conn plan"><span class="name">Xero</span><span class="st">Planned · not started</span><p>Needs an organisation header that the transport does not send yet.</p></div>
-  </div>
-  <p class="note">Planned means not built. Built means the connector exists and passes its tests on fixtures; it does not mean an app is registered with that provider. Salesforce and QuickBooks offer no read-only permission, so for those two read-only is enforced by Swarmed's transport, which can only send read requests.</p>
+  <p class="note">Built means the connector exists and passes its tests on fixtures; it does not mean an app is registered with that provider. Salesforce and QuickBooks offer no read-only permission, so for those two read-only is enforced by Swarmed's transport, which can only send read requests.</p>
   <p class="note tm">GitHub, Slack, Google Workspace, Microsoft 365, Jira, Asana, Zendesk, Intercom, HubSpot, Salesforce, Stripe, QuickBooks, Linear, Notion and Xero are trademarks of their respective owners. Naming them here describes what Swarmed reads and implies no endorsement, partnership or certification. The GitHub mark is used under GitHub's logo policy to show that Swarmed reads from GitHub.</p>
 </div></section>
 
@@ -273,7 +270,7 @@
   <h2>If you are the one approving access</h2>
   <p class="sub">Short answers. The <a href="security.html">security page</a> has the detail, including what is not in place.</p>
   <div class="faq">
-    <details><summary>Can Swarmed change anything in our systems?</summary><p>No. A connector is built on a transport whose only request is a read. There is no write, send or delete path in it. The agents have no tools that act on your systems.</p></details>
+    <details><summary>Can Swarmed change anything in our systems?</summary><p>No. A connector is built on a transport that can send only read requests: GET, plus a query-only POST to an allow-listed set of provider query endpoints. There is no write, send or delete path in it. The agents have no tools that act on your systems.</p></details>
     <details><summary>Does it read our messages and documents?</summary><p>Not by default. Connectors keep metadata such as counts, timestamps and owners, and drop message text, titles and file bodies before anything is stored. Some permissions the providers offer would technically expose content; we mark those for you before you approve. Content is a separate grant for the engagement, and without it a content request is refused.</p></details>
     <details><summary>What exactly do we approve?</summary><p>A list of every permission each connector requests, with the reason for each. Exact scopes are confirmed with you in writing before access is granted.</p></details>
     <details><summary>Where is our data kept?</summary><p>In a separate database for your company, with no shared tables. Credentials are sealed in a vault outside that database, so a report or a backup never contains one. Only verified findings and the records they cite leave the store.</p></details>

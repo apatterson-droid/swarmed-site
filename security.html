@@ -26,7 +26,7 @@
 <section><div class="wrap split">
   <div><h2>Access</h2>
     <ul class="list">
-      <li><span><b>Read-only by construction.</b> Connectors are built on a transport that can only read. There is no write, send or delete path to misuse.</span></li>
+      <li><span><b>Read-only by construction.</b> Connectors are built on a transport that can send only read requests: GET, plus a query-only POST to an allow-listed set of provider query endpoints. There is no write, send or delete path to misuse.</span></li>
       <li><span><b>Least scope, shown to you.</b> Each connector lists every permission it requests and why. That list is what you approve.</span></li>
       <li><span><b>Metadata first.</b> Each connector keeps an allow-list of fields and drops the rest, including titles, message text and file bodies, before anything is stored.</span></li>
       <li><span><b>Content is a separate grant.</b> Without your explicit approval for the engagement, a content request is refused.</span></li>
