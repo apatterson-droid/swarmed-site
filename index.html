@@ -8,20 +8,20 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="logos/swarmed-favicon.svg" type="image/svg+xml">
-<title>Swarmed: a map of how your company actually runs</title>
-<meta name="description" content="Swarmed sends read-only role-agents into your systems and returns a map of how your company runs, with every finding tied to evidence.">
+<title>Swarmed: see where your company is stuck</title>
+<meta name="description" content="Swarmed is a one-time audit that shows where work waits, what has no owner, what you pay for and do not use, and what to fix first. Every finding is tied to evidence.">
 </head>
 <body>
 <header class="top"><div class="wrap bar">
   <a class="logo" href="index.html" aria-label="Swarmed, home"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><g><circle class="o" cx="32.00" cy="11.00" r="5.6" style="--dx:-7px;--dy:-22px;--d:0ms"/><circle class="o" cx="50.19" cy="21.50" r="5.6" style="--dx:36px;--dy:-24px;--d:45ms"/><circle class="o" cx="50.19" cy="42.50" r="5.6" style="--dx:20px;--dy:8px;--d:90ms"/><circle class="o" cx="32.00" cy="53.00" r="5.6" style="--dx:9px;--dy:42px;--d:135ms"/><circle class="o" cx="13.81" cy="42.50" r="5.6" style="--dx:-34px;--dy:8px;--d:180ms"/><circle class="o" cx="13.81" cy="21.50" r="5.6" style="--dx:-18px;--dy:-24px;--d:225ms"/></g><circle class="c" cx="32" cy="32" r="8"/></svg><span>swarmed</span></a>
-  <nav aria-label="Main"><a href="#deliverable">What you get</a><a href="#swarm">How it works</a><a href="#report">Sample report</a><a href="#integrations">Integrations</a><a href="security.html">Security</a></nav>
+  <nav aria-label="Main"><a href="#why">Why</a><a href="#deliverable">What you get</a><a href="#how">How it works</a><a href="#report">Sample report</a><a href="#integrations">Integrations</a><a href="security.html">Security</a></nav>
   <a class="btn primary sm" href="#contact">Ask about an audit</a>
 </div></header>
 <div class="hero"><div class="wrap hero-grid">
   <div class="hero-copy">
     <span class="eyebrow">Swarm Audit · one-time engagement</span>
-    <h1>Send in the swarm. <span>Get back the map.</span></h1>
-    <p class="lede">A swarm of read-only agents moves through your systems and maps how your company actually runs. Nothing reaches you until a separate verifier has checked it against the source.</p>
+    <h1>See where your company is stuck. <span>Fix that first.</span></h1>
+    <p class="lede">Work waits between teams. Requests sit with no owner. Tools get paid for and forgotten. Swarmed reads the systems you already use and returns one report: where work stalls, who owns what, and what to fix first.</p>
     <div class="actions"><a class="btn primary" href="#contact">Ask about a design-partner audit</a><a class="btn down" href="#report">See a sample report</a></div>
   </div>
   <figure class="viz-wrap">
@@ -38,50 +38,24 @@
     <figcaption>Illustration of how a run flows. It is not live data: nothing has run on a real workspace yet.</figcaption>
   </figure>
   <dl class="facts">
+    <div><dt>Your time</dt><dd>One approval, one review call</dd></div>
+    <div><dt>Delivery</dt><dd>One to two weeks, fixed fee</dd></div>
     <div><dt>Access</dt><dd>Read-only</dd></div>
-    <div><dt>Default depth</dt><dd>Metadata, not content</dd></div>
     <div><dt>Every finding</dt><dd>Checked against its source</dd></div>
-    <div><dt>Data store</dt><dd>One per client</dd></div>
   </dl>
 </div></div>
 
-<section id="swarm" class="band"><div class="wrap">
-  <h2>How the swarm works</h2>
-  <p class="sub">Records come in through read-only connectors. Role-agents propose findings. A separate verifier decides which ones you ever see.</p>
-  <ol class="flow" aria-label="How a run flows">
-    <li class="stage">
-      <svg viewBox="0 0 76 60" aria-hidden="true"><circle class="d" cx="9" cy="40" r="2.6"/><circle class="d" cx="22" cy="12" r="2.6"/><circle class="d" cx="31" cy="33" r="2.6"/><circle class="d" cx="44" cy="8" r="2.6"/><circle class="d" cx="52" cy="47" r="2.6"/><circle class="d" cx="66" cy="22" r="2.6"/><circle class="d" cx="15" cy="52" r="2.6"/><circle class="d" cx="38" cy="50" r="2.6"/><circle class="d" cx="58" cy="34" r="2.6"/><circle class="d" cx="70" cy="48" r="2.6"/><circle class="d" cx="26" cy="24" r="2.6"/><circle class="d" cx="48" cy="26" r="2.6"/></svg>
-      <span class="k">01 · Your systems</span>
-      <h3>Read-only connectors</h3>
-      <p>Each connector can only send a read request. It keeps an allow-list of metadata fields and drops the rest before anything is stored.</p>
-      <span class="chips"><i>GitHub</i><i>Slack</i><i>Google Workspace</i></span>
-    </li>
-    <li class="stage">
-      <svg viewBox="0 0 76 60" aria-hidden="true"><circle class="d" cx="14" cy="14" r="2.6"/><circle class="d" cx="30" cy="14" r="2.6"/><circle class="d" cx="46" cy="14" r="2.6"/><circle class="d" cx="62" cy="14" r="2.6"/><circle class="d" cx="14" cy="30" r="2.6"/><circle class="d" cx="30" cy="30" r="2.6"/><circle class="d" cx="46" cy="30" r="2.6"/><circle class="d" cx="62" cy="30" r="2.6"/><circle class="d" cx="14" cy="46" r="2.6"/><circle class="d" cx="30" cy="46" r="2.6"/><circle class="d" cx="46" cy="46" r="2.6"/><circle class="d" cx="62" cy="46" r="2.6"/></svg>
-      <span class="k">02 · Evidence ledger</span>
-      <h3>Hashed records</h3>
-      <p>Every record is stored once with a content hash, in a database that belongs to your company alone. A stored record is never edited.</p>
-    </li>
-    <li class="stage">
-      <svg viewBox="0 0 76 60" aria-hidden="true"><circle class="d" cx="38" cy="10" r="2.6"/><circle class="d" cx="57" cy="20" r="2.6"/><circle class="d" cx="57" cy="40" r="2.6"/><circle class="d" cx="38" cy="50" r="2.6"/><circle class="d" cx="19" cy="40" r="2.6"/><circle class="d" cx="19" cy="20" r="2.6"/><circle class="a" cx="38" cy="30" r="3.4"/></svg>
-      <span class="k">03 · Role-agents</span>
-      <h3>One role per department</h3>
-      <p>Intake routes each record to a role. The role writes findings, and each finding must cite the records it rests on.</p>
-    </li>
-    <li class="stage gate">
-      <svg viewBox="0 0 76 60" aria-hidden="true"><circle class="d" cx="12" cy="18" r="2.6"/><circle class="d" cx="12" cy="30" r="2.6"/><circle class="d" cx="12" cy="42" r="2.6"/><path class="g" d="M34 6v48"/><circle class="t" cx="56" cy="18" r="3.2"/><circle class="t" cx="56" cy="42" r="3.2"/><circle class="r" cx="24" cy="30" r="3.2"/></svg>
-      <span class="k">04 · Verifier</span>
-      <h3>A different role checks</h3>
-      <p>It re-reads every cited record. A finding whose evidence is missing, changed or does not hold the quoted value is rejected.</p>
-    </li>
-    <li class="stage">
-      <svg viewBox="0 0 76 60" aria-hidden="true"><rect class="pg" x="20" y="4" width="36" height="52" rx="4"/><circle class="t" cx="29" cy="16" r="2.6"/><path class="ln" d="M36 16h13M27 27h22M27 35h22M27 43h14"/></svg>
-      <span class="k">05 · Report</span>
-      <h3>Verified findings only</h3>
-      <p>The report is built from an export that holds verified findings and exactly the records they cite. Nothing else leaves the store.</p>
-    </li>
-  </ol>
-  <p class="note">Rejected findings stay in your store with the reason. They never reach the report.</p>
+<section id="why" class="band"><div class="wrap">
+  <h2>You cannot fix what nobody can see.</h2>
+  <p class="sub">Most companies grow faster than their processes. The problems below rarely show on a dashboard, because each one sits between two teams or two tools. These are the questions the audit answers.</p>
+  <div class="roles">
+    <div class="role"><span class="state">Handoff gaps</span><h3>Where is work waiting?</h3><p>A review with no reviewer. A request nobody picked up. The report lists each one, with the record that shows it.</p></div>
+    <div class="role"><span class="state">Queue ownership</span><h3>Who owns this?</h3><p>Queues, channels and pipelines with no named owner. Work stalls there first.</p></div>
+    <div class="role"><span class="state">AI and tool spend</span><h3>What are we paying for?</h3><p>Subscriptions and seats set against what is used. This part needs your billing records.</p></div>
+    <div class="role"><span class="state">Support flow</span><h3>Where do customer requests go?</h3><p>Where requests arrive, how busy each channel is, and when it goes quiet.</p></div>
+    <div class="role"><span class="state">Systems map</span><h3>What do we actually run?</h3><p>Each team sees its own tools. The map shows all of them: what is active, what is stale, what was abandoned.</p></div>
+    <div class="role"><span class="state">Automation backlog</span><h3>What do we fix first?</h3><p>A ranked list, each item scored for value and effort, with the reason for the score.</p></div>
+  </div>
 </div></section>
 
 <section id="deliverable"><div class="wrap">
@@ -152,6 +126,57 @@
   <p class="note">Illustration only. Brindlewood Supply is an invented company and every value above is invented. No audit of a real company has been run yet.</p>
 </div></section>
 
+<section id="how"><div class="wrap">
+  <h2>How an audit runs</h2>
+  <p class="sub">Your side of it is one approval and one review call.</p>
+  <div class="steps">
+    <div class="step"><div><h3>You authorise read-only access</h3><p>You see every permission and the reason for it before you approve. A connector is refused any permission you did not approve.</p></div></div>
+    <div class="step"><div><h3>The swarm reads metadata first</h3><p>Names, counts, timestamps and owners. Message and file content is read only if you grant it separately.</p></div></div>
+    <div class="step"><div><h3>Each role maps its department</h3><p>Every role that received records writes findings, each with citations.</p></div></div>
+    <div class="step"><div><h3>The verifier checks every finding</h3><p>Anything it cannot trace to a stored, unchanged source is rejected.</p></div></div>
+    <div class="step"><div><h3>You get one report</h3><p>A single page. Every line links to its evidence, and the page lists what was and was not examined.</p></div></div>
+  </div>
+</div></section>
+
+<section id="swarm" class="band"><div class="wrap">
+  <h2>How the swarm works</h2>
+  <p class="sub">Each agent takes one department and reads its systems. It writes down what it finds. A separate verifier checks every finding against the source and rejects anything it cannot prove.</p>
+  <ol class="flow" aria-label="How a run flows">
+    <li class="stage">
+      <svg viewBox="0 0 76 60" aria-hidden="true"><circle class="d" cx="9" cy="40" r="2.6"/><circle class="d" cx="22" cy="12" r="2.6"/><circle class="d" cx="31" cy="33" r="2.6"/><circle class="d" cx="44" cy="8" r="2.6"/><circle class="d" cx="52" cy="47" r="2.6"/><circle class="d" cx="66" cy="22" r="2.6"/><circle class="d" cx="15" cy="52" r="2.6"/><circle class="d" cx="38" cy="50" r="2.6"/><circle class="d" cx="58" cy="34" r="2.6"/><circle class="d" cx="70" cy="48" r="2.6"/><circle class="d" cx="26" cy="24" r="2.6"/><circle class="d" cx="48" cy="26" r="2.6"/></svg>
+      <span class="k">01 · Your systems</span>
+      <h3>It can only read</h3>
+      <p>Swarmed connects to your systems with read-only access. It keeps counts, dates and owners, and drops message text and file contents before anything is stored.</p>
+      <span class="chips"><i>GitHub</i><i>Slack</i><i>Google Workspace</i></span>
+    </li>
+    <li class="stage">
+      <svg viewBox="0 0 76 60" aria-hidden="true"><circle class="d" cx="14" cy="14" r="2.6"/><circle class="d" cx="30" cy="14" r="2.6"/><circle class="d" cx="46" cy="14" r="2.6"/><circle class="d" cx="62" cy="14" r="2.6"/><circle class="d" cx="14" cy="30" r="2.6"/><circle class="d" cx="30" cy="30" r="2.6"/><circle class="d" cx="46" cy="30" r="2.6"/><circle class="d" cx="62" cy="30" r="2.6"/><circle class="d" cx="14" cy="46" r="2.6"/><circle class="d" cx="30" cy="46" r="2.6"/><circle class="d" cx="46" cy="46" r="2.6"/><circle class="d" cx="62" cy="46" r="2.6"/></svg>
+      <span class="k">02 · Evidence ledger</span>
+      <h3>Records are sealed</h3>
+      <p>Every record is stored once, fingerprinted, in a database that belongs to your company alone. A stored record is never edited.</p>
+    </li>
+    <li class="stage">
+      <svg viewBox="0 0 76 60" aria-hidden="true"><circle class="d" cx="38" cy="10" r="2.6"/><circle class="d" cx="57" cy="20" r="2.6"/><circle class="d" cx="57" cy="40" r="2.6"/><circle class="d" cx="38" cy="50" r="2.6"/><circle class="d" cx="19" cy="40" r="2.6"/><circle class="d" cx="19" cy="20" r="2.6"/><circle class="a" cx="38" cy="30" r="3.4"/></svg>
+      <span class="k">03 · Role-agents</span>
+      <h3>One role per department</h3>
+      <p>Each record goes to the agent for its department. The agent writes findings, and each finding must name the records it rests on.</p>
+    </li>
+    <li class="stage gate">
+      <svg viewBox="0 0 76 60" aria-hidden="true"><circle class="d" cx="12" cy="18" r="2.6"/><circle class="d" cx="12" cy="30" r="2.6"/><circle class="d" cx="12" cy="42" r="2.6"/><path class="g" d="M34 6v48"/><circle class="t" cx="56" cy="18" r="3.2"/><circle class="t" cx="56" cy="42" r="3.2"/><circle class="r" cx="24" cy="30" r="3.2"/></svg>
+      <span class="k">04 · Verifier</span>
+      <h3>A different agent checks</h3>
+      <p>It re-reads every cited record. A finding whose evidence is missing, changed or does not hold the quoted value is rejected.</p>
+    </li>
+    <li class="stage">
+      <svg viewBox="0 0 76 60" aria-hidden="true"><rect class="pg" x="20" y="4" width="36" height="52" rx="4"/><circle class="t" cx="29" cy="16" r="2.6"/><path class="ln" d="M36 16h13M27 27h22M27 35h22M27 43h14"/></svg>
+      <span class="k">05 · Report</span>
+      <h3>Verified findings only</h3>
+      <p>The report holds verified findings and the records they cite. Nothing else leaves your database.</p>
+    </li>
+  </ol>
+  <p class="note">Rejected findings stay in your store with the reason. They never reach the report.</p>
+</div></section>
+
 <section id="evidence"><div class="wrap split">
   <div>
     <h2>Every line has a source you can open.</h2>
@@ -169,9 +194,35 @@
   </div>
 </div></section>
 
-<section id="finding" class="band"><div class="wrap">
+<section id="integrations" class="band"><div class="wrap">
+  <h2>What Swarmed connects to</h2>
+  <p class="sub">Sixteen connectors are built today. Each is tested against hand-written fixtures for an invented company. None has run against a live workspace yet; the first design-partner audit will be the first.</p>
+  <h3 class="group">Connectors built <span>16</span></h3>
+  <div class="conns">
+    <div class="conn"><span class="name"><img src="logos/github.svg" alt="GitHub" height="36"></span><span class="st built">Built · fixtures only</span><p>Repository, pull request and workflow metadata: state, dates, reviewers, counts.</p></div>
+    <div class="conn"><span class="name"><img class="lg-slack" src="logos/slack.svg" alt="" height="36">Slack</span><span class="st built">Built · fixtures only</span><p>Channel list, member counts, message timestamps and reply counts. Message text is discarded as each page is read.</p></div>
+    <div class="conn"><span class="name"><img class="lg-google-workspace" src="logos/google-workspace.png" alt="Google Workspace" height="36"></span><span class="st built">Built · fixtures only</span><p>Drive file metadata and Calendar event metadata. File names and event titles are not requested without a content grant.</p></div>
+    <div class="conn"><span class="name"><img class="lg-microsoft-365" src="logos/microsoft-365.png" alt="Microsoft 365" height="36"></span><span class="st built">Built · fixtures only</span><p>Users, groups, mailbox folder counts, OneDrive file metadata and calendar event metadata. Subjects and file names need a content grant.</p></div>
+    <div class="conn"><span class="name"><img src="logos/jira.svg" alt="Jira" height="36"></span><span class="st built">Built · fixtures only</span><p>Projects and issue metadata: status, type, assignee, created and resolved dates. Issue summaries need a content grant.</p></div>
+    <div class="conn"><span class="name">Asana</span><span class="st built">Built · fixtures only</span><p>Workspaces, teams, projects and task metadata: state, assignee, dates. Task and project names need a content grant.</p></div>
+    <div class="conn"><span class="name"><img class="lg-zendesk" src="logos/zendesk.svg" alt="Zendesk" height="36"></span><span class="st built">Built · fixtures only</span><p>Ticket metadata: status, assignee, group, timestamps and ticket metrics. Users are counted, never listed.</p></div>
+    <div class="conn"><span class="name">Intercom</span><span class="st built">Built · fixtures only</span><p>Conversation metadata: state, assignee, team and response timestamps. Message text is never requested.</p></div>
+    <div class="conn"><span class="name"><img class="lg-hubspot" src="logos/hubspot.svg" alt="HubSpot" height="36"></span><span class="st built">Built · fixtures only</span><p>Owners, pipelines and deal metadata: stage, owner, dates. Contacts and companies are counted, never listed.</p></div>
+    <div class="conn"><span class="name"><img class="lg-salesforce" src="logos/salesforce.svg" alt="Salesforce" height="36"></span><span class="st built">Built · fixtures only</span><p>Users, opportunity and case metadata: stage, status, owner, dates. Accounts, contacts and leads are counted only.</p></div>
+    <div class="conn"><span class="name"><img class="lg-stripe" src="logos/stripe.svg" alt="Stripe" height="36"></span><span class="st built">Built · fixtures only</span><p>Products, prices, subscriptions and invoices. Customers are counted, never listed. No card or bank details are kept.</p></div>
+    <div class="conn"><span class="name"><img class="lg-quickbooks" src="logos/quickbooks.svg" alt="QuickBooks" height="36"></span><span class="st built">Built · fixtures only</span><p>Vendors, bills and purchases on expense accounts, totalled per vendor. Bank and card accounts are skipped.</p></div>
+    <div class="conn"><span class="name"><img class="lg-linear" src="logos/linear.svg" alt="Linear" height="36"></span><span class="st built">Built · fixtures only</span><p>Teams, projects and issue metadata: state, assignee, dates, cycle. Read through a query-only request; changes are refused before anything is sent.</p></div>
+    <div class="conn"><span class="name"><img class="lg-notion" src="logos/notion.svg" alt="" height="36">Notion</span><span class="st built">Built · fixtures only</span><p>Users, pages and databases: ids, parents, created and edited times. Titles are discarded as each page is read unless you grant content.</p></div>
+    <div class="conn"><span class="name"><img class="lg-xero" src="logos/xero.svg" alt="Xero" height="36"></span><span class="st built">Built · fixtures only</span><p>Suppliers, bills and expense accounts, totalled per supplier. No bank details are kept.</p></div>
+    <div class="conn"><span class="name"><img class="lg-calendly" src="logos/calendly.svg" alt="Calendly" height="36"></span><span class="st built">Built · fixtures only</span><p>Event types and scheduled events: status, times, hosts, invitee counts and cancellations. Invitee names, emails and answers are never requested.</p></div>
+  </div>
+  <p class="note">Built means the connector exists and passes its tests on fixtures; it does not mean an app is registered with that provider. Salesforce and QuickBooks offer no read-only permission, so for those two read-only is enforced by Swarmed's transport, which can only send read requests.</p>
+  <p class="note tm">GitHub, Slack, Google Workspace, Microsoft 365, Jira, Asana, Zendesk, Intercom, HubSpot, Salesforce, Stripe, QuickBooks, Linear, Notion, Xero and Calendly are trademarks of their respective owners. Naming them here describes what Swarmed reads and implies no endorsement, partnership or certification. Logos are each company's own published files, shown unmodified, only to identify the systems Swarmed reads from.</p>
+</div></section>
+
+<section id="finding"><div class="wrap">
   <h2>What a finding looks like</h2>
-  <p class="sub">One finding, followed from the record a connector read to the line in your report.</p>
+  <p class="sub">For the technical reviewer: one finding, followed from the record a connector read to the line in your report.</p>
   <div class="walk">
     <div class="wstep"><span class="k">1 · A connector stores a record</span>
       <pre class="code"><span class="c">uri</span>     github://…/pulls/41
@@ -208,17 +259,17 @@
   <p class="note">Illustrative values for an invented company.</p>
 </div></section>
 
-<section id="roles"><div class="wrap">
-  <h2>The role-agents and the verifier</h2>
+<section id="roles" class="band"><div class="wrap">
+  <h2>One agent per department, and one that checks them all</h2>
   <p class="sub">Each role has one department and one written brief. All of them work under the same evidence rules: cite the record, point at the field, claim only what the record shows.</p>
   <div class="roles">
     <div class="role on"><span class="state">Receives records today</span><h3>Engineering</h3><p>Systems, owners, and how work moves from open to merged to deployed.</p><span class="feeds">GitHub</span></div>
     <div class="role on"><span class="state">Receives records today</span><h3>Operations</h3><p>Recurring processes, which team runs each, and where work crosses teams.</p><span class="feeds">Slack, Google Workspace</span></div>
-    <div class="role"><span class="state">Defined · waiting for a connector</span><h3>Customer support</h3><p>Where requests arrive, who picks them up, where they stall.</p></div>
-    <div class="role"><span class="state">Defined · waiting for a connector</span><h3>Sales and marketing</h3><p>How a lead becomes a customer and what is handed on after a sale.</p></div>
-    <div class="role"><span class="state">Defined · waiting for a connector</span><h3>People and hiring</h3><p>Hiring, onboarding, offboarding and access requests, from process metadata only.</p></div>
-    <div class="role"><span class="state">Defined · waiting for a connector</span><h3>Finance and spend</h3><p>Which tools are paid for, by which team, and how many seats are used.</p></div>
-    <div class="role"><span class="state">Defined · waiting for a connector</span><h3>IT and security</h3><p>Which systems exist, who administers each, which apps hold access.</p></div>
+    <div class="role"><span class="state">Defined · no records routed yet</span><h3>Customer support</h3><p>Where requests arrive, who picks them up, where they stall.</p></div>
+    <div class="role"><span class="state">Defined · no records routed yet</span><h3>Sales and marketing</h3><p>How a lead becomes a customer and what is handed on after a sale.</p></div>
+    <div class="role"><span class="state">Defined · no records routed yet</span><h3>People and hiring</h3><p>Hiring, onboarding, offboarding and access requests, from process metadata only.</p></div>
+    <div class="role"><span class="state">Defined · no records routed yet</span><h3>Finance and spend</h3><p>Which tools are paid for, by which team, and how many seats are used.</p></div>
+    <div class="role"><span class="state">Defined · no records routed yet</span><h3>IT and security</h3><p>Which systems exist, who administers each, which apps hold access.</p></div>
     <div class="role ver"><span class="state">Checks every finding</span><h3>Verifier</h3><p>Writes no findings. Re-reads every cited record and returns a verdict with reasons. It does not repair a finding.</p></div>
   </div>
   <ul class="list tight">
@@ -229,49 +280,13 @@
   </ul>
 </div></section>
 
-<section id="integrations" class="band"><div class="wrap">
-  <h2>What Swarmed connects to</h2>
-  <p class="sub">Sixteen connectors are built today. Each is tested against hand-written fixtures for an invented company. None has run against a live workspace yet; the first design-partner audit will be the first.</p>
-  <h3 class="group">Connectors built <span>16</span></h3>
-  <div class="conns">
-    <div class="conn"><span class="name"><img src="logos/github.svg" alt="GitHub" height="36"></span><span class="st built">Built · fixtures only</span><p>Repository, pull request and workflow metadata: state, dates, reviewers, counts.</p></div>
-    <div class="conn"><span class="name"><img class="lg-slack" src="logos/slack.svg" alt="" height="36">Slack</span><span class="st built">Built · fixtures only</span><p>Channel list, member counts, message timestamps and reply counts. Message text is discarded as each page is read.</p></div>
-    <div class="conn"><span class="name"><img class="lg-google-workspace" src="logos/google-workspace.png" alt="Google Workspace" height="36"></span><span class="st built">Built · fixtures only</span><p>Drive file metadata and Calendar event metadata. File names and event titles are not requested without a content grant.</p></div>
-    <div class="conn"><span class="name"><img class="lg-microsoft-365" src="logos/microsoft-365.png" alt="Microsoft 365" height="36"></span><span class="st built">Built · fixtures only</span><p>Users, groups, mailbox folder counts, OneDrive file metadata and calendar event metadata. Subjects and file names need a content grant.</p></div>
-    <div class="conn"><span class="name"><img src="logos/jira.svg" alt="Jira" height="36"></span><span class="st built">Built · fixtures only</span><p>Projects and issue metadata: status, type, assignee, created and resolved dates. Issue summaries need a content grant.</p></div>
-    <div class="conn"><span class="name">Asana</span><span class="st built">Built · fixtures only</span><p>Workspaces, teams, projects and task metadata: state, assignee, dates. Task and project names need a content grant.</p></div>
-    <div class="conn"><span class="name"><img class="lg-zendesk" src="logos/zendesk.svg" alt="Zendesk" height="36"></span><span class="st built">Built · fixtures only</span><p>Ticket metadata: status, assignee, group, timestamps and ticket metrics. Users are counted, never listed.</p></div>
-    <div class="conn"><span class="name">Intercom</span><span class="st built">Built · fixtures only</span><p>Conversation metadata: state, assignee, team and response timestamps. Message text is never requested.</p></div>
-    <div class="conn"><span class="name"><img class="lg-hubspot" src="logos/hubspot.svg" alt="HubSpot" height="36"></span><span class="st built">Built · fixtures only</span><p>Owners, pipelines and deal metadata: stage, owner, dates. Contacts and companies are counted, never listed.</p></div>
-    <div class="conn"><span class="name"><img class="lg-salesforce" src="logos/salesforce.svg" alt="Salesforce" height="36"></span><span class="st built">Built · fixtures only</span><p>Users, opportunity and case metadata: stage, status, owner, dates. Accounts, contacts and leads are counted only.</p></div>
-    <div class="conn"><span class="name"><img class="lg-stripe" src="logos/stripe.svg" alt="Stripe" height="36"></span><span class="st built">Built · fixtures only</span><p>Products, prices, subscriptions and invoices. Customers are counted, never listed. No card or bank details are kept.</p></div>
-    <div class="conn"><span class="name"><img class="lg-quickbooks" src="logos/quickbooks.svg" alt="QuickBooks" height="36"></span><span class="st built">Built · fixtures only</span><p>Vendors, bills and purchases on expense accounts, totalled per vendor. Bank and card accounts are skipped.</p></div>
-    <div class="conn"><span class="name"><img class="lg-linear" src="logos/linear.svg" alt="Linear" height="36"></span><span class="st built">Built · fixtures only</span><p>Teams, projects and issue metadata: state, assignee, dates, cycle. Read through a query-only request; changes are refused before anything is sent.</p></div>
-    <div class="conn"><span class="name"><img class="lg-notion" src="logos/notion.svg" alt="" height="36">Notion</span><span class="st built">Built · fixtures only</span><p>Users, pages and databases: ids, parents, created and edited times. Titles are discarded as each page is read unless you grant content.</p></div>
-    <div class="conn"><span class="name"><img class="lg-xero" src="logos/xero.svg" alt="Xero" height="36"></span><span class="st built">Built · fixtures only</span><p>Suppliers, bills and expense accounts, totalled per supplier. No bank details are kept.</p></div>
-    <div class="conn"><span class="name"><img class="lg-calendly" src="logos/calendly.svg" alt="Calendly" height="36"></span><span class="st built">Built · fixtures only</span><p>Event types and scheduled events: status, times, hosts, invitee counts and cancellations. Invitee names, emails and answers are never requested.</p></div>
-  </div>
-  <p class="note">Built means the connector exists and passes its tests on fixtures; it does not mean an app is registered with that provider. Salesforce and QuickBooks offer no read-only permission, so for those two read-only is enforced by Swarmed's transport, which can only send read requests.</p>
-  <p class="note tm">GitHub, Slack, Google Workspace, Microsoft 365, Jira, Asana, Zendesk, Intercom, HubSpot, Salesforce, Stripe, QuickBooks, Linear, Notion, Xero and Calendly are trademarks of their respective owners. Naming them here describes what Swarmed reads and implies no endorsement, partnership or certification. Logos are each company's own published files, shown unmodified, only to identify the systems Swarmed reads from.</p>
-</div></section>
-
-<section id="how"><div class="wrap">
-  <h2>How an audit runs</h2>
-  <p class="sub">Your side of it is one approval and one review call.</p>
-  <div class="steps">
-    <div class="step"><div><h3>You authorise read-only access</h3><p>You see every permission and the reason for it before you approve. A connector is refused any permission you did not approve.</p></div></div>
-    <div class="step"><div><h3>The swarm reads metadata first</h3><p>Names, counts, timestamps and owners. Message and file content is read only if you grant it separately.</p></div></div>
-    <div class="step"><div><h3>Each role maps its department</h3><p>Every role that received records writes findings, each with citations.</p></div></div>
-    <div class="step"><div><h3>The verifier checks every finding</h3><p>Anything it cannot trace to a stored, unchanged source is rejected.</p></div></div>
-    <div class="step"><div><h3>You get one report</h3><p>A single page. Every line links to its evidence, and the page lists what was and was not examined.</p></div></div>
-  </div>
-</div></section>
-
-<section id="faq" class="band"><div class="wrap">
-  <h2>If you are the one approving access</h2>
+<section id="faq"><div class="wrap">
+  <h2>Questions before you say yes</h2>
   <p class="sub">Short answers. The <a href="security.html">security page</a> has the detail, including what is not in place.</p>
   <div class="faq">
-    <details><summary>Can Swarmed change anything in our systems?</summary><p>No. A connector is built on a transport that can send only read requests: GET, plus a query-only POST to an allow-listed set of provider query endpoints. There is no write, send or delete path in it. The agents have no tools that act on your systems.</p></details>
+    <details><summary>Is this a tool our developers have to run?</summary><p>No. It is an audit for whoever runs the company or its operations. Your side is one approval and one review call. What you get is a report you can read without a technical background.</p></details>
+    <details><summary>Will it tell us how much we will save?</summary><p>No. The report shows what is there: work that waits, queues with no owner, what you pay for, and a ranked list of what to fix. It does not estimate savings, because an estimate is not evidence.</p></details>
+    <details><summary>Can Swarmed change anything in our systems?</summary><p>No. Swarmed can only send read requests. There is no write, send or delete path in it, and the agents have no tools that act on your systems. The <a href="security.html">security page</a> has the technical detail.</p></details>
     <details><summary>Does it read our messages and documents?</summary><p>Not by default. Connectors keep metadata such as counts, timestamps and owners, and drop message text, titles and file bodies before anything is stored. Some permissions the providers offer would technically expose content; we mark those for you before you approve. Content is a separate grant for the engagement, and without it a content request is refused.</p></details>
     <details><summary>What exactly do we approve?</summary><p>A list of every permission each connector requests, with the reason for each. Exact scopes are confirmed with you in writing before access is granted.</p></details>
     <details><summary>Where is our data kept?</summary><p>In a separate database for your company, with no shared tables. Credentials are sealed in a vault outside that database, so a report or a backup never contains one. Only verified findings and the records they cite leave the store.</p></details>
@@ -281,7 +296,7 @@
   </div>
 </div></section>
 
-<section id="tiers"><div class="wrap">
+<section id="tiers" class="band"><div class="wrap">
   <h2>Where this is going</h2>
   <p class="sub">We are building in order. Only the first is on offer.</p>
   <div class="grid tiers">
@@ -299,6 +314,7 @@
     <p class="addr" data-contact><a href="mailto:adrianlpatterson@gmail.com" style="color:inherit">adrianlpatterson@gmail.com</a></p>
   </div>
 </div></section>
+
 <footer class="wrap"><span>swarmed · many small agents, one clear picture</span><span><a href="index.html">Home</a> · <a href="security.html">Security and data handling</a> · <a href="brand.html">Brand kit</a></span></footer>
 <script src="swarm.js"></script>
 </body>
