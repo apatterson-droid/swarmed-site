@@ -1,4 +1,4 @@
-// Hero illustration of how a run flows: records leave the three systems, the role-agents write
+// Hero illustration of how a run flows: records leave the client's systems, the role-agents write
 // findings, the verifier passes or rejects each one, verified findings land in the report.
 // It is a drawing of docs/ARCHITECTURE.md, not data: nothing here is fetched, counted or measured.
 (() => {
@@ -10,8 +10,8 @@
 
   const PAPER = "246,243,236", MUTED = "201,206,214", AMBER = "255,176,32", TEAL = "47,208,192", RED = "255,122,126";
   // Positions are fractions of the box, so the HTML labels in index.html line up at any size.
-  const SOURCES = [[0.09, 0.2], [0.06, 0.5], [0.09, 0.8]];
-  const HUB = [0.44, 0.5];
+  const SOURCES = [[0.30, 0.11], [0.29, 0.24], [0.28, 0.37], [0.27, 0.50], [0.28, 0.63], [0.29, 0.76], [0.30, 0.89]];
+  const HUB = [0.5, 0.5];
   const GATE = 0.72;
   const REPORT = { x: 0.84, y: 0.3, w: 0.13, h: 0.4 };
   const SLOTS = 5;
@@ -48,7 +48,7 @@
 
     if (time >= nextRecord) {
       nextRecord = time + 0.16 + random() * 0.2;
-      records.push({ source: Math.floor(random() * 3), bend: (random() - 0.5) * 0.36, u: 0, speed: 0.5 + random() * 0.25 });
+      records.push({ source: Math.floor(random() * SOURCES.length), bend: (random() - 0.5) * 0.36, u: 0, speed: 0.5 + random() * 0.25 });
     }
     for (const record of records) record.u += dt * record.speed;
     records = records.filter((record) => {
@@ -114,11 +114,11 @@
     SOURCES.forEach(([sx, sy]) => {
       const x = sx * W, y = sy * H;
       ctx.beginPath();
-      ctx.arc(x, y, M * 0.034, 0, Math.PI * 2);
+      ctx.arc(x, y, M * 0.024, 0, Math.PI * 2);
       ctx.strokeStyle = `rgba(${MUTED},.55)`;
       ctx.lineWidth = 1.5;
       ctx.stroke();
-      dot(x, y, M * 0.011, PAPER, 0.9);
+      dot(x, y, M * 0.008, PAPER, 0.9);
     });
     for (const record of records) {
       const [sx, sy] = SOURCES[record.source];
